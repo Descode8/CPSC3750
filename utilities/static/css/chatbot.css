@@ -56,8 +56,8 @@ body {
 } */
 
 #top-part img {
-    /* margin-top: 0px;
-    margin-bottom: 0px; */
+    margin-top: 5px;
+    margin-bottom: 2px;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -140,10 +140,11 @@ body {
 
 .message {
     padding: 4px 8px; /* Reduced padding */
-    margin: 0.5rem 0;
+    margin: 0.2rem 0;
     display: inline-block; /* Makes the container fit the content width */
     max-width: 80%; /* Maximum width of message bubbles */
     word-wrap: break-word; /* Ensure long words wrap and don't overflow */
+    line-height: 1.2;
 }
 
 .user-message {
@@ -169,6 +170,12 @@ body {
     padding: 7px;
     word-wrap: break-word;
     margin-top: 5px; /* Add this line to reduce the top margin */
+}
+
+.user-message p, .bot-message p {
+    margin: 0; /* Remove the default margin from the <p> tags */
+    padding: 0; /* Remove any padding from the <p> tags */
+    line-height: 1.2; /* Ensure line-height is consistent */
 }
 
 .bot-message a {

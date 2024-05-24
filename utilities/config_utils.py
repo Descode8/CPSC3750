@@ -28,8 +28,7 @@ SYSTEM_INSTRUCTIONS: str = f"""
                             Interperet 'this week' as the week that {current_date} is in. 
                             Many questions will be based on the most current assignments.
                             Limit reponses to {OUT_TOKEN_LIMIT} tokens. 
-                            Use bold letters and unordered lists for a better user experience.
-                            Put a newline before and after each list so that the list has space above and below it to stand out.\n
+                            Use bold letters and unordered lists for a better user experience.\n
                             
                             "Weekly Schedule: Week 1: Part I: Web Application Basics Date: May 14 - 18 Topic: Syllabus + Course Intro, Understanding How the Web Works, User Interface Design Readings: Syllabus, SAMS Book Chapter 1, DMMT Book: Introduction Assignments: SAMS CH01 Quiz, DMMT Intro Quiz, Prog01-Web Host, VQ's, Syllabus Quiz"
                             "Weekly Schedule: Week 2: Part: I Web Application Basics Date: May 20 - 25 Topic: Structuring HTML and Using CSS, Understanding the CSS Box Model and Positioning, Don't Make Me Think Readings: SAMS Book Chapter 2, SAMS Book Chapter 3, DMMT Book: Chapter 1 Assignments: SAMS CH02 Quiz, SAMS CH03 Quiz, DMMT Ch01 Quiz, Prog02 - HTML & CSS, Prog03 - CSS Layout, VQ's"
@@ -53,8 +52,8 @@ user_Question_Header: str = '\n\nAnswer this question\n'
 system_instruction_trail: str = 'Based on this information only, answer the user\'s question.'
 
 # Store customer credentials for authentication purposes in the Flask application
-CUSTOMER_ID = 'demo@witty.ai'
-PASSWORD = 'witty'
+CUSTOMER_ID = 'cpsc@clemson.edu'
+PASSWORD = '3750'
 
 # User email/password in Flask POST matches the chatbot DB
 customers: dict = {

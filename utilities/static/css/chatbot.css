@@ -165,7 +165,7 @@ body {
     float: left; /* Aligns the message bubble to the left */
     clear: both; /* Ensures that the message doesn't wrap around floated elements */
     color: white;
-    border: 2px solid #B88416;
+    border: 1px solid #14386C;
     padding: 7px;
     word-wrap: break-word;
     margin-top: 5px; /* Add this line to reduce the top margin */

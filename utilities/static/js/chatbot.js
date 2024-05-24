@@ -66,38 +66,27 @@ function sendMessage() {
     })
     .then(response => response.json())
     .then(data => {
+        // Create a new div for the AI's response
         let aiResponse = document.createElement('div');
         aiResponse.className = 'message bot-message';
 
-        // Manually replace **text** with <b>text</b>
-        let formattedResponse = data.response.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        // Customize marked renderer to add target="_blank" to links
+        const renderer = new marked.Renderer();
+        renderer.link = function(href, title, text) {
+            return `<a href="${href}" target="_blank">${text}</a>`;
+        };
 
-        // Format list items with appropriate indentation
-        let formattedLines = formattedResponse.split('\n').map(line => {
-            if (line.startsWith('- ')) {
-                return `<div style="margin-left: 20px;">${line}</div>`;
-            } else if (line.startsWith('    - ')) {
-                return `<div style="margin-left: 40px;">${line}</div>`;
-            } else {
-                return `<div>${line}</div>`;
-            }
-        }).join('');
-
-        // Replace URLs with clickable links
-        formattedLines = formattedLines.replace(/https?:\/\/[^\s<>()\[\]]+(?:\.[^\s<>()\[\]]+)*[^\s<>()\[\].,?!]/g, (url) => {
-            return `<a href="${url}" target="_blank">${url}</a>`;
-        });
-
-        // Set the formatted HTML as the content of the AI response
-        aiResponse.innerHTML = formattedLines;
+        // Use marked to parse the Markdown response into HTML
+        let formattedResponse = marked.parse(data.response, { renderer: renderer });
+        aiResponse.innerHTML = formattedResponse;
 
         // Remove the loading placeholder and append AI's response
         loadingPlaceholder.remove();
         chatBox.appendChild(aiResponse);
-        
+
         // Scroll to the bottom of the chat box after appending messages
         chatBox.scrollTop = chatBox.scrollHeight;
-
+        
         // Change back to dark blue send button
         sendButton.src = 'static/Images/orange_button.png';
     })

@@ -4,7 +4,7 @@ body {
     padding: 0;
     margin-top: 10%;
     background-color: #f1f1f1;
-    font-size: .7rem;
+    font-size: 10pt;
     display: flex;
     justify-content: center;
 }
@@ -55,7 +55,7 @@ body {
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
     background-color: #ffffff; /* White background for the chat messages */
-    font-size: .9em; /* Adjust font-size as needed */
+    font-size: 10pt; /* Adjust font-size as needed */
 }
 
 #chat-box::-webkit-scrollbar {
@@ -146,6 +146,8 @@ body {
     word-wrap: break-word;
     margin-top: 5px; /* Add this line to reduce the top margin */
     font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    max-width: 100%; /* Ensure it can grow but not exceed the container width */
+    width: auto; /* Allow the width to adjust based on the content */
 }
 
 .message pre, .message code {
@@ -154,7 +156,9 @@ body {
     line-height: 1.2; /* Ensure line-height is consistent */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    font-size: 0.9em; /* Reduce font-size */
+    font-weight: bold;
+    font-size: 9pt; /* Reduce font-size */
+    color: #C98A0A;
     font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif; /* Inherit the font-family from parent */
     background: none; /* Remove default background */
     border: none; /* Remove default border */

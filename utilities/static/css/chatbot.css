@@ -132,6 +132,9 @@ body {
     padding: 7px;
     word-wrap: break-word;
     font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    font-weight: bold;
+    max-width: 90%; /* Ensure it can grow but not exceed the container width */
+    width: auto; /* Allow the width to adjust based on the content */
 }
 
 .bot-message {
@@ -146,7 +149,7 @@ body {
     word-wrap: break-word;
     margin-top: 5px; /* Add this line to reduce the top margin */
     font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
-    max-width: 100%; /* Ensure it can grow but not exceed the container width */
+    max-width: 90%; /* Ensure it can grow but not exceed the container width */
     width: auto; /* Allow the width to adjust based on the content */
 }
 

@@ -1,23 +1,23 @@
 body {
-    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
-    margin: 0; 
-    padding: 0; 
+    font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     margin-top: 10%;
     background-color: #f1f1f1;
-    font-size: 1rem;
+    font-size: .7rem;
     display: flex;
     justify-content: center;
 }
 
 #chat-container {
-    width: 400px;;
-    margin: auto; 
+    width: 400px;
+    margin: auto;
     border-radius: 3px;
-    border: 1px solid #14386C;
+    border: 1px solid #1C1B19;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    box-shadow: 0 2px 5px #14386C;
+    box-shadow: 0 2px 5px #1C1B19;
     overflow: hidden;
 }
 
@@ -26,45 +26,20 @@ body {
     max-width: 100%;
     background-color: white; /* Gold background color */
     display: flex;
-    border-bottom: 5px solid #B88416;
+    border-bottom: 5px solid #C98A0A;
     align-items: center;
     justify-content: center; /* Spread out the contents */
     height: auto;
     padding: 0 10%; /* Add padding on the sides */
 }
 
-/* #top-part::before {
-    overflow: hidden;
-    content: 'CPSC';
-    display: block;
-    text-align: right;
-    padding: 5%;
-    color: #ffffff;
-    font-size: 1.5em;
-    flex: 1;
-}
-
-#top-part::after {
-    overflow: hidden;
-    content: '3750';
-    display: block;
-    text-align: left;
-    padding: 5%;
-    color: #ffffff;
-    font-size: 1.5em;
-    flex: 1;
-} */
-
 #top-part img {
-    margin-top: 5px;
-    margin-bottom: 2px;
+    margin-top: 3px;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     max-height: 65%; /* Make the image height 100% of the parent container */
     max-width: 65%; /* Make the image width 100% of the parent container */
-    /*height: auto;  Maintain aspect ratio 
-    width: auto;  Maintain aspect ratio */
     z-index: 2; /* Make sure the image is above pseudo-elements */
 }
 
@@ -75,7 +50,7 @@ body {
     padding-top: 3%;
     padding-right: 3%;
     border-top: none;
-    border-bottom: none; 
+    border-bottom: none;
     overflow-y: scroll;
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
@@ -88,8 +63,6 @@ body {
 }
 
 #input-area {
-    /* border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px; */
     overflow: hidden;
     display: flex;
     align-items: stretch; /* Make children stretch to fill the height */
@@ -120,20 +93,20 @@ body {
 }
 
 #user-input {
-    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
     flex-grow: 1; /* Allow input to grow and fill available space */
     margin: 0; /* Reset margin to ensure it doesn't push out the layout */
     padding: 8px; /* Adjust padding as needed, but ensure it's accounted for in the height */
     border: none; /* Remove border to prevent extra width */
     outline: none; /* Optional: Removes the outline */
-    border-top: 3px solid #B88416;
+    border-top: 3px solid #C98A0A;
     max-height: 100%; /* Make the image height 100% of the parent container */
     max-width: 100%; /* Make the image width 100% of the parent container */
     height: auto; /* Maintain aspect ratio */
-    width: auto; 
+    width: auto;
 }
 
-#user-input::placeholder{
+#user-input::placeholder {
     color: #231f20;
     border: none;
 }
@@ -145,6 +118,7 @@ body {
     max-width: 80%; /* Maximum width of message bubbles */
     word-wrap: break-word; /* Ensure long words wrap and don't overflow */
     line-height: 1.2;
+    font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
 }
 
 .user-message {
@@ -152,24 +126,38 @@ body {
     text-align: left;
     float: right; /* Aligns the message bubble to the right */
     clear: both; /* Ensures that the message doesn't wrap around floated elements */
-    color: #4b4a4d;
+    color: #1C1B19;
     background-color: white;
-    border: 2px solid #B88416;
+    border: 2px solid #C98A0A;
     padding: 7px;
     word-wrap: break-word;
+    font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
 }
 
 .bot-message {
     border-radius: 15px 15px 15px 0;
-    background-color: #14386C;
+    background-color: #274C77;
     text-align: left;
-    float: left; /* Aligns the message bubble to the left */
+    display: inline-block; /* Ensure it extends with the text */
     clear: both; /* Ensures that the message doesn't wrap around floated elements */
     color: white;
-    border: 1px solid #14386C;
+    border: 1px solid #274C77;
     padding: 7px;
     word-wrap: break-word;
     margin-top: 5px; /* Add this line to reduce the top margin */
+    font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+}
+
+.message pre, .message code {
+    white-space: pre-wrap; /* Ensure long lines wrap */
+    word-wrap: break-word; /* Ensure long words wrap */
+    line-height: 1.2; /* Ensure line-height is consistent */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-size: 0.9em; /* Reduce font-size */
+    font-family: 'Consolas', 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif; /* Inherit the font-family from parent */
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
 }
 
 .user-message p, .bot-message p {
@@ -179,50 +167,7 @@ body {
 }
 
 .bot-message a {
-    color: #B88416;
-}
-
-
-/* 3 Bar Animation */
-.lds-facebook,
-.lds-facebook div {
-    box-sizing: border-box;
-}
-.lds-facebook {
-    display: inline-block;
-    position: relative;
-    width: 60px;
-    height: 80px;
-}
-.lds-facebook div {
-    display: inline-block;
-    position: absolute;
-    left: 8px;
-    width: 16px;
-    background: linear-gradient(#0026af, #3a68e6, #000000);
-    animation: lds-facebook .75s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-}
-.lds-facebook div:nth-child(1) {
-    left: 8px;
-    animation-delay: -0.24s;
-}
-.lds-facebook div:nth-child(2) {
-    left: 32px;
-    animation-delay: -0.12s;
-}
-.lds-facebook div:nth-child(3) {
-    left: 56px;
-    animation-delay: 0s;
-}
-@keyframes lds-facebook {
-    0% {
-        top: 8px;
-        height: 64px;
-    }
-    50%, 100% {
-        top: 24px;
-        height: 32px;
-    }
+    color: #C98A0A;
 }
 
 /* running dots */
@@ -240,28 +185,28 @@ body {
 
 @keyframes shadowRolling {
     0% {
-        box-shadow: 0px 0 #14386C, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
+        box-shadow: 0px 0 #274C77, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
     }
     10% {
-        box-shadow: 100px 0 #B88416, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
+        box-shadow: 100px 0 #C98A0A, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
     }
     20% {
-        box-shadow: 110px 0 #B88416, 100px 0 #B88416, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
+        box-shadow: 110px 0 #C98A0A, 100px 0 #C98A0A, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
     }
     30% {
-        box-shadow: 120px 0 #B88416, 110px 0 #14386C, 100px 0 #B88416, 0px 0 rgba(188, 148, 91, 0);
+        box-shadow: 120px 0 #C98A0A, 110px 0 #274C77, 100px 0 #C98A0A, 0px 0 rgba(188, 148, 91, 0);
     }
     40% {
-        box-shadow: 130px 0 #14386C, 120px 0 #B88416, 110px 0 #14386C, 100px 0 #B88416;
+        box-shadow: 130px 0 #274C77, 120px 0 #C98A0A, 110px 0 #274C77, 100px 0 #C98A0A;
     }
     50% {
-        box-shadow: 200px 0 rgba(188, 148, 91, 0), 130px 0 #14386C, 120px 0 #B88416, 110px 0 #14386C;
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 130px 0 #274C77, 120px 0 #C98A0A, 110px 0 #274C77;
     }
     60% {
-        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 130px 0 #B88416, 120px 0 #14386C;
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 130px 0 #C98A0A, 120px 0 #274C77;
     }
     70% {
-        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 130px 0 #B88416;
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 130px 0 #C98A0A;
     }
     80% {
         box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0);

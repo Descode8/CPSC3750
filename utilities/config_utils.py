@@ -16,20 +16,23 @@ DATA_EMBEDDING_CSV: str = 'summer2024_embeddings.csv'
 openai_api_key: str = os.getenv('OPENAI_API_KEY')
 openai_org_key: str = os.getenv('ORG_KEY')
 MODERATION_API_ENDPOINT: str = 'https://api.openai.com/v1/moderations'
-EMBEDDING_MODEL: str = "text-embedding-3-small"
+EMBEDDING_MODEL: str = "text-embedding-3-small" # essential! Generates 1536 dimensions Pinecone must match this!
 GPT_MODEL: str =  "gpt-4o" #"gpt-4-1106-preview" #"gpt-3.5-turbo-0125" #"gpt-4-turbo" 
-NUM_OF_SIMILARITIES: int = 5
+NUM_OF_SIMILARITIES: int = 3
 OUT_TOKEN_LIMIT: int = 150
 IN_TOKEN_LIMIT: int = 100
 TEMP_SET: int = 0
 
 SYSTEM_INSTRUCTIONS: str = f"""
+                            This is for a student learning HTML, CSS, JavaScript, and PHP.
+                            This student has little knowledge of Web Application Development, so keep that in mind.
+                            Be sure to give HTML, CSS, JavaScript, and PHP examples when possible in the proper syntax and format.
                             It is important that you know the current date of today which is {current_date}.
                             Interperet 'this week' as the week that {current_date} is in. 
                             Many questions will be based on the most current assignments.
                             Limit reponses to {OUT_TOKEN_LIMIT} tokens. 
-                            Use bold letters and unordered lists for a better user experience.\n
-                            
+                            IMPORTANT: If your response contains HTML tags for examples, treat it like normal text because the browswer will render it.
+                            IMPORTANT: Use ASCII examples for code snippets.
                             "Weekly Schedule: Week 1: Part I: Web Application Basics Date: May 14 - 18 Topic: Syllabus + Course Intro, Understanding How the Web Works, User Interface Design Readings: Syllabus, SAMS Book Chapter 1, DMMT Book: Introduction Assignments: SAMS CH01 Quiz, DMMT Intro Quiz, Prog01-Web Host, VQ's, Syllabus Quiz"
                             "Weekly Schedule: Week 2: Part: I Web Application Basics Date: May 20 - 25 Topic: Structuring HTML and Using CSS, Understanding the CSS Box Model and Positioning, Don't Make Me Think Readings: SAMS Book Chapter 2, SAMS Book Chapter 3, DMMT Book: Chapter 1 Assignments: SAMS CH02 Quiz, SAMS CH03 Quiz, DMMT Ch01 Quiz, Prog02 - HTML & CSS, Prog03 - CSS Layout, VQ's"
                             "Weekly Schedule: Week 3: Part: II Getting Started with Dynamic Websites Date: May 27 - June 1 Topic: Introducing Javascript, Introducing PHP, How We Use the Web Readings: SAMS Book Chapter 4, SAMS Book Chapter 5, DMMT Book: Chapter 2 Assignments: SAMS CH04 Quiz, SAMS CH05 Quiz, DMMT Ch02 Quiz, Prog04 - Javascript Events, Prog05 - PHP HelloWorld, VQ's"
